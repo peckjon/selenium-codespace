@@ -1,9 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python 3",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+	"name": "Python 3 with Chrome",
+    // Use a Dockerfile to extend the base image
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -12,10 +14,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip3 install --user -r requirements.txt",
-
-	// Specify VS Code extensions to be installed in the dev container
-	"extensions": ["github.copilot"]
+	"postCreateCommand": "pip3 install --user -r requirements.txt"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
